@@ -25,7 +25,7 @@ export async function getAuthorizationUrl(
 
     const issuer = new URL(provider.issuer!)
     const discoveryResponse = await o.discoveryRequest(issuer)
-    const as = await o.processDiscoveryResponse(issuer, discoveryResponse)
+    as = await o.processDiscoveryResponse(issuer, discoveryResponse)
 
     if (!as.authorization_endpoint) {
       throw new TypeError(
